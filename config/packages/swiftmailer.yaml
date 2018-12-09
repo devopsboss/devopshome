@@ -1,0 +1,5 @@
+swiftmailer:
+#    url: '%env(MAILER_URL)%'
+    url: 'MAILER_URL=smtp://user:password@smtp.domain_name:587'
+    spool: { type: 'memory' }
+

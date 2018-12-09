@@ -1,0 +1,19 @@
+// assets/css/admin-imports/content.scss
+
+
+/*
+ * Content
+ */
+
+[role="main"] {
+  padding-top: 48px;
+  /* Space for fixed navbar */
+}
+
+.tasks-table button {
+  padding: .075rem .75rem;
+}
+
+#task-command, #task-output {
+  display: none;
+}

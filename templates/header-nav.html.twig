@@ -1,0 +1,79 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top shadow">
+    {#<nav class="navbar navbar-dark fixed-top bg-dark shadow">#}
+    {#<a class="navbar-brand" href="#">Navbar</a>#}
+    <a class="navbar-brand col-sm-3 mr-0 text-center" href="{{ path('app_home') }}">Devops Home</a>
+
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto" id="topNav">
+
+            {#<li class="nav-item">#}
+                {#<a class="nav-link" href="{{ path('app_project_edit') }}">#}
+                    {#<span data-feather="github"></span>#}
+                    {#Projects#}
+                {#</a>#}
+            {#</li>#}
+            <li class="nav-item">
+                <a class="nav-link" href="{{ path('app_deploy', {'project': projectList.active}) }}">
+                    <span data-feather="database"></span>
+                    Deploy
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ path('app_errortracking', {'project': projectList.active}) }}">
+                    <span data-feather="file-text"></span>
+                    Error Tracking
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ path('app_monitoring', {'project': projectList.active}) }}">
+                    <span data-feather="monitor"></span>
+                    Monitor
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ path('app_quality', {'project': projectList.active}) }}">
+                    <span data-feather="check-circle"></span>
+                    Quality
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ path('app_security', {'project': projectList.active}) }}">
+                    <span data-feather="shield"></span>
+                    Security
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ path('app_seo', {'project': projectList.active}) }}">
+                    <span data-feather="layers"></span>
+                    SEO
+                </a>
+            </li>
+        </ul>
+
+        <ul class="navbar-nav px-3" id="settingsNav">
+            <li class="nav-item text-nowrap dropdown">
+
+                <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                   aria-haspopup="true" aria-expanded="false">
+                    <span data-feather="settings"></span>
+                </a>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="{{ path('app_setting_integrations', {'project': projectList.active}) }}">Integrations</a>
+                    <a class="dropdown-item" href="{{ path('app_setting_settings', {'project': projectList.active}) }}">Settings</a>
+                    <a class="dropdown-item" href="{{ path('app_setting_tools', {'project': projectList.active}) }}">Tools</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="{{ path('app_setting_phpinfo') }}">PHP Info</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="{{ path('auth_logout') }}">Logout</a>
+                </div>
+            </li>
+        </ul>
+
+    </div>
+</nav>

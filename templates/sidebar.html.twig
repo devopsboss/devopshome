@@ -1,0 +1,45 @@
+<nav class="col-md-3 d-none d-md-block bg-light sidebar">
+    <div class="sidebar-sticky">
+
+        <div id="project-heading"
+           class="list-group-item list-group-item-action flex-column align-items-start">
+            <div class="d-flex w-100 justify-content-between">
+                <h5 class="mb-1">Projects</h5>
+                <small>
+                    <a href="#"><span data-feather="search"></span></a>
+                    <a href="{{ path('app_project_list', {'project': projectList.active}) }}"><span data-feather="list"></span></a>
+                </small>
+            </div>
+        </div>
+
+        <form class="sidebar-search d-flex align-items-center">
+            <input class="form-control" type="search" placeholder="Search Projects" aria-label="Search Projects">
+        </form>
+
+        <div class="list-group">
+            {#{% if sidebarTemplate is defined %}#}
+
+                {#{% if sidebarTemplate == 'projects/index' %}#}
+                    {#{% include 'sidebar/' ~ sidebarTemplate ~ '.html.twig' %}#}
+                {#{% endif %}#}
+
+            {#{% endif %}#}
+
+            {% for project in projectList.projects %}
+
+                {#TODO: update to include active #}
+                <a href="{{ project.viewUrl }}"
+                   class="list-group-item list-group-item-action flex-column align-items-start {% if projectList.active == project.identifier %}active{% endif %}">
+                    <div class="d-flex w-100 justify-content-between">
+                        <h5 class="mb-1">{{ project.name }}</h5>
+                        <small>{{ project.updated }} ago</small>
+                    </div>
+                    <p class="mb-1">Donec id elit non mi porta gravida at metus.</p>
+                    <small>{{ project.category }}</small>
+                </a>
+            {% endfor %}
+
+        </div>
+
+    </div>
+</nav>

@@ -1,0 +1,25 @@
+// assets/css/admin.scss
+
+
+body {
+  font-size: .875rem;
+}
+
+.border-top {
+  border-top: 1px solid #e5e5e5;
+}
+
+.border-bottom {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+
+/*
+ * Imports
+ */
+@import "admin-imports/content";
+@import "admin-imports/icons";
+@import "admin-imports/menu";
+@import "admin-imports/prism-tomorrow";
+@import "admin-imports/sidebar";
+

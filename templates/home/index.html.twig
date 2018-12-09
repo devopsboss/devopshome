@@ -1,0 +1,59 @@
+{% extends 'base-admin.html.twig' %}
+
+{% block body_id 'admin-home' %}
+
+{% block title %}Hello {{ controller_name }}!{% endblock %}
+
+{% block body %}
+    <main role="main" class="col-md-9 ml-sm-auto col-lg-9 px-4">
+
+        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+            <h1 class="h2">Home</h1>
+            <div class="btn-toolbar mb-2 mb-md-0">
+                <div class="btn-group mr-2">
+                    <button class="btn btn-sm btn-outline-secondary">Share</button>
+                    <button class="btn btn-sm btn-outline-secondary">Export</button>
+                </div>
+                <button class="btn btn-sm btn-outline-secondary dropdown-toggle">
+                    <span data-feather="calendar"></span>
+                    This week
+                </button>
+            </div>
+        </div>
+
+
+        <table class="table table-hover tasks-table">
+            <thead class="thead-dark">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Description</th>
+                <th scope="col">Action</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <th scope="row">1</th>
+                <td>Route list</td>
+                <td>...</td>
+                <td>
+                    <button type="button" class="btn btn-outline-primary task-view" data-task="1">View</button>
+                    <button type="button" class="btn btn-outline-danger task-run" data-task="1">Run</button>
+                    <button type="button" class="btn btn-outline-success task-log">Log</button>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+
+        <div id="task-command">
+            <h3>command</h3>
+            <pre><code class="language-bash"></code></pre>
+        </div>
+
+        <div id="task-output">
+            <h3>output</h3>
+            <pre><code class="language-bash"></code></pre>
+        </div>
+    </main>
+
+{% endblock %}

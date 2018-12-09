@@ -1,0 +1,14 @@
+// assets/css/app.scss
+
+// Your variable overrides go here, e.g.:
+// $h1-font-size: 3rem;
+
+// customize some Bootstrap variables
+$primary: darken(#428bca, 20%);
+
+// IMPORTS
+// the ~ allows you to reference things in node_modules
+
+// bootstrap
+@import "~bootstrap/scss/bootstrap";
+

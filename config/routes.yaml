@@ -1,0 +1,25 @@
+NelmioApiDocBundle:
+    resource: "@NelmioApiDocBundle/Resources/config/routing/swaggerui.xml"
+    prefix:   /docs
+#    prefix:   /api/doc
+
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+
+#app_route.index:
+#    path: /
+#    defaults: { _controller: 'App\Controller\DefaultController:index' }
+#
+#app_route.command:
+#    path: /command
+#    defaults: { _controller: 'App\Controller\DefaultController:commandAction' }
+#
+#app_route.reactphp:
+#    path: /reactphp
+#    defaults: { _controller: 'App\Controller\DefaultController::reactphpAction' }
+
+
+#AppBundle:
+#    resource: "@AppBundle/Resources/config/routing.yml"
+#    prefix: /v2
+

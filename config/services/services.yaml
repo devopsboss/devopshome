@@ -1,0 +1,27 @@
+services:
+
+#    app.command.say_hello:
+#        class: App\Command\SayHelloCommand
+#        tags:
+#            - { name: console.command }
+
+#    app.util.streamed_output:
+#        class: App\Util\StreamedOutput
+
+#    app.controller.default:
+#        class: App\Controller\DefaultController
+#        arguments:
+#            - '@app.command.say_hello'
+
+
+#    app.fetcher.project_list:
+#        class: App\Domain\Service\Fetcher\ProjectListFetcher
+#        public: true
+#        arguments:
+#            - '@router'
+
+
+    App\Domain\Service\Fetcher\ProjectListFetcher:
+        public: true
+        arguments:
+            - '@router'

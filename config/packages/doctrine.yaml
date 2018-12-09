@@ -1,0 +1,61 @@
+# Read the documentation: https://symfony.com/doc/current/reference/configuration/doctrine.html
+parameters:
+    # Adds a fallback DATABASE_URL if the env var is not set.
+    # This allows you to run cache:warmup even if your
+    # environment variables are not available yet.
+    # You should not need to change this value.
+#    env(DATABASE_URL): 'mysql://dbuser:strongpassword@127.0.0.1:3306/opendevops'
+
+doctrine:
+    dbal:
+        # configure these for your database server
+        driver: pdo_mysql
+        server_version: '5.7'
+        charset: UTF8
+#        charset: utf8mb4
+
+        # With Symfony 3.3, remove the `resolve:` prefix
+#        url: '%env(resolve:DATABASE_URL)%'
+#        url: '%env(DATABASE_URL)%'
+        url: 'mysql://dbuser:strongpassword@127.0.0.1:3306/opendevops'
+    orm:
+        auto_generate_proxy_classes: '%kernel.debug%'
+        entity_managers:
+            default:
+#                naming_strategy: doctrine.orm.naming_strategy.underscore
+                naming_strategy: doctrine.orm.naming_strategy.default
+                #TODO: change to auto_mapping: false? (to avoid wbnt_dfgb_test)
+                auto_mapping: true
+                mappings:
+                    # http://symfony.com/doc/current/reference/configuration/doctrine.html#mapping-entities-outside-of-a-bundle
+                    # https://symfony.com/doc/current/doctrine.html#generating-getters-and-setters
+                    # use the bundle for entities so we can run "bin/console doctrine:generate:fixture"
+#                    AppBundle:
+#                        is_bundle: true
+#                        type: annotation
+#                        dir: Entity
+#                        prefix: App\DataStore\Entity
+                    App:
+                        is_bundle: false
+                        type: annotation
+                        dir: '%kernel.project_dir%/src/DataStore/Entity'
+                        prefix: 'App\DataStore\Entity'
+                        alias: App
+                metadata_cache_driver:
+                    type: memcached
+                    host: 127.0.0.1
+                    port: 11211
+                    class: Doctrine\Common\Cache\MemcachedCache
+                    instance_class: Memcached
+                query_cache_driver:
+                    type: memcached
+                    host: 127.0.0.1
+                    port: 11211
+                    class: Doctrine\Common\Cache\MemcachedCache
+                    instance_class: Memcached
+                result_cache_driver:
+                    type: memcached
+                    host: 127.0.0.1
+                    port: 11211
+                    class: Doctrine\Common\Cache\MemcachedCache
+                    instance_class: Memcached

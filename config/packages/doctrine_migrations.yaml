@@ -1,0 +1,9 @@
+doctrine_migrations:
+    dir_name: '%kernel.project_dir%/src/DataStore/Migrations'
+    # namespace is arbitrary but should be different from App\Migrations
+    # as migrations classes should NOT be autoloaded
+    namespace: DoctrineMigrations
+    table_name: migration_versions
+    name: Application Migrations
+    #organize_migrations: false # Version >=1.2 Possible values are: "BY_YEAR", "BY_YEAR_AND_MONTH", false
+    organize_migrations: BY_YEAR_AND_MONTH

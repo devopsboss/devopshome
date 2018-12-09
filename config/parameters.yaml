@@ -1,0 +1,5 @@
+# TODO: this will git ignored and copied from one of these: config/env/local or config/env/local etc
+imports:
+    - { resource: env/common/base_parameters.yaml }
+#    - { resource: env/local/parameters.yaml }
+#    - { resource: env/staging/parameters.yaml }

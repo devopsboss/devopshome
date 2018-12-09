@@ -1,0 +1,12 @@
+{#{% extends 'base-admin.html.twig' %}#}
+
+{#{% block body_id 'setting-phpinfo' %}#}
+
+{#{% block title %}php info{% endblock %}#}
+
+{#{% block body %}#}
+    {#<main role="main" class="col-md-9 ml-sm-auto col-lg-9 px-4">#}
+        {#{{ phpinfo | raw }}#}
+    {#</main>#}
+{#{% endblock %}#}
+{{ phpinfo | raw }}

@@ -1,0 +1,21 @@
+# Put parameters here that don't need to change on each machine where the app is deployed
+# https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
+parameters:
+
+    locale: 'en'
+
+    #
+    # * MAILER
+    #
+    # used by fos_user?
+    mailer_user: user@localhost
+
+
+#    mailer_transport: smtp
+#    mailer_host:
+#    mailer_username:
+#    mailer_password:
+#    mailer_auth_mode: login
+#    mailer_encryption: tls
+#    mailer_port: 587
+
